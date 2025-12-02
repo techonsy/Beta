@@ -3,19 +3,15 @@ import "./App.css";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Landing from "./pages/Landing";
+import Navbar from "./components/common/Navbar";
 
 function App() {
   return (
     <Router>
-      <nav className="auth-links">
-        <Link to="/login">Login</Link> | <Link to="/register">Register</Link>
-      </nav>
-
-      <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+    <Navbar />
+   <Landing />
+     
     </Router>
   );
 }
