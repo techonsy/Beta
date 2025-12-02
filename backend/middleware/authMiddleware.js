@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
+// Protect routes (authentication)
 export const protect = async (req, res, next) => {
   try {
     let token;
@@ -21,4 +22,14 @@ export const protect = async (req, res, next) => {
   } catch (error) {
     res.status(401).json({ message: "Invalid token" });
   }
+};
+
+// Authorize roles (authorization)
+export const authorizeRoles = (...roles) => {
+  return (req, res, next) => {
+    if (!req.user || !roles.includes(req.user.role)) {
+      return res.status(403).json({ message: "Forbidden: Access denied" });
+    }
+    next();
+  };
 };

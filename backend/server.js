@@ -5,6 +5,8 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import connectDB from "./config/db.js";
 import ticketRoutes from "./routes/ticketRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import supportRoutes from "./routes/supportRoutes.js";
 
 import authRoutes from "./routes/authRoutes.js";
 dotenv.config();
@@ -27,7 +29,8 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("Socket connected:", socket.id);
 });
-
+app.use("/api/admin", adminRoutes);
+app.use("/api/support", supportRoutes);
 app.get("/", (req, res) => {
   res.send("API is running...");
 });
