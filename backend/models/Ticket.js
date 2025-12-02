@@ -8,14 +8,16 @@ const ticketSchema = new mongoose.Schema(
     priority: {
       type: String,
       enum: ["low", "medium", "high"],
-      default: "low",
+      default: "medium",
     },
 
     status: {
       type: String,
-      enum: ["open", "in-progress", "resolved"],
+      enum: ["open", "in-progress", "resolved", "closed"],
       default: "open",
     },
+
+    category: { type: String, default: "General" },
 
     user: {
       type: mongoose.Schema.Types.ObjectId,
@@ -25,13 +27,23 @@ const ticketSchema = new mongoose.Schema(
 
     assignedTo: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User", // support staff
+      ref: "User",
       default: null,
     },
 
-    category: { type: String, default: "general" },
-
-    attachment: { type: String, default: null },
+    comments: [
+      {
+        text: String,
+        sender: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: "User",
+        },
+        createdAt: {
+          type: Date,
+          default: Date.now,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
