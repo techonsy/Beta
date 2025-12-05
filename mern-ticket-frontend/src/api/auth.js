@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/auth";
+const BASE_URL = "https://beta-1-b3zx.onrender.com";
 
 // Register user
 export const registerUser = async (userData) => {

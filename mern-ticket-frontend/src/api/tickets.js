@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api"; // your backend base URL
+const BASE_URL = "https://beta-1-b3zx.onrender.com"; // your backend base URL
 
 // -------------------- User APIs --------------------
 // Create a new ticket
