@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 connectDB();
-createSuperAdmin();
+// createSuperAdmin();
 const server = createServer(app);
 
 // Socket instance
