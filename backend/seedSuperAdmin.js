@@ -16,7 +16,7 @@ export const createSuperAdmin = async () => {
       role: "superadmin",
     });
 
-    console.log("⭐ SUPERADMIN created (email: admin@123.com | password: admin@123)");
+    // console.log("⭐ SUPERADMIN created (email: admin@123.com | password: admin@123)");
   } catch (error) {
     console.error("SuperAdmin creation error:", error);
   }
