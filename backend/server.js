@@ -21,6 +21,7 @@ app.use(cors({
 }));
 
 connectDB();
+//remove comment to create superadmin
 // createSuperAdmin();
 const server = createServer(app);
 
