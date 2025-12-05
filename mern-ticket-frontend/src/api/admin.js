@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000/api/admin";
+const BASE_URL = "https://beta-1-b3zx.onrender.com";
 
 // Get all users (Admin)
 export const getAllUsers = async (token) => {
