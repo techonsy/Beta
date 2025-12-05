@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://beta-1-b3zx.onrender.com";
+const BASE_URL = "https://beta-3-ckub.onrender.com";
 
 // Register user
 export const registerUser = async (userData) => {
